@@ -8,7 +8,7 @@ app.use(bodyParser.json());
 
 app.post('/subscribe', components.controller.subscribe({
     MAILCHIMP_API_KEY: config.MAILCHIMP_API_KEY,
-    listId: 'e5770b11b0'
+    listId: config.listId
 }));
 
 app.listen('3507', () => console.log('server listening on localhost:3507'));

@@ -8,6 +8,10 @@ export interface Opts {
   listId: string
 }
 
+export interface SubscribeInfo {
+  email_address: string
+}
+
 export class MCService {
   private MAILCHIMP_DATACENTER: string;
   private MAILCHIMP_ENDPOINT: string;
@@ -25,13 +29,14 @@ export class MCService {
     }
 
     this.MAILCHIMP_API_KEY = opts.MAILCHIMP_API_KEY;
-    this.listId = opts.MAILCHIMP_API_KEY;
+    this.listId = opts.listId;
     this.MAILCHIMP_DATACENTER = this.MAILCHIMP_API_KEY.split('-')[1];
     this.MAILCHIMP_ENDPOINT = `https://playi:${ this.MAILCHIMP_API_KEY }@${ this.MAILCHIMP_DATACENTER }.api.mailchimp.com/3.0`;
   }
 
   subscribe (body) {
     const hash = md5(body.email_address);
+    body.status = 'subscribed';
     return axios.put(`${ this.MAILCHIMP_ENDPOINT }/lists/${ this.listId }/members/${ hash }`, body);
   } 
 }
