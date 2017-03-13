@@ -1,0 +1,12 @@
+templates/
+.sass-cache/
+spec/
+node_modules/
+CHANGELOG.md
+tsconfig.json
+tsd.json
+webpack.config.js
+*.cache
+gulpfile.js
+.travis.yml
+karma.conf.js
