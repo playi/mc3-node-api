@@ -1,5 +1,11 @@
 {
   "name": "mc3-node-api",
   "version": "1.0.0",
-  "dependencies": {}
+  "dependencies": {
+    "@types/node": {
+      "version": "7.0.8",
+      "from": "@types/node@latest",
+      "resolved": "https://registry.npmjs.org/@types/node/-/node-7.0.8.tgz"
+    }
+  }
 }

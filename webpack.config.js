@@ -22,7 +22,7 @@ var prodPlugins = [
 
 //noinspection JSUnresolvedFunction
 module.exports = {
-  entry: './src',
+  entry: './src/index.ts',
   devtool: !argv.production && "inline-source-map",
   resolve: {
     extensions: ["", ".webpack.js", ".web.js", ".js", ".ts", ".tsx"]
@@ -40,7 +40,7 @@ module.exports = {
     return [autoprefixer];
   },
   output: {
-    path: "/dist",
+    path: "./dist",
     publicPath: "",
     filename: "[name].js",
     library: "[name]",
