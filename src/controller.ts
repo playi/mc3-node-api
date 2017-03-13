@@ -1,8 +1,7 @@
 /* eslint camelcase:0 */
 
-const marked = require('marked');
 const _ = require('lodash');
-const MCService = require('./MCService');
+const MCService = require('./service');
 
 const handleError = (req, res) => (error) => {
   if (error.status === 400 && error.data.title === "Invalid Resource") {

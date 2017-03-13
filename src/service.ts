@@ -15,7 +15,7 @@ class MCService {
   }
   subscribe (body) {
     const hash = md5(body.email_address);
-    return axios.put(`${ MAILCHIMP_ENDPOINT }/lists/${ config.MAILCHIMP_TEACHER_MAILING_LIST }/members/${ hash }`, body);
+    return axios.put(`${ this.MAILCHIMP_ENDPOINT }/lists/${ this.MAILCHIMP_TEACHER_MAILING_LIST }/members/${ hash }`, body);
   } 
 }
 

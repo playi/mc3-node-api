@@ -33,7 +33,11 @@ module.exports = {
       {
         test: /\.ts$/,
         loaders: ["ts-loader"]
-      }
+      },
+      {
+        test: /\.json$/,
+        loader: 'json'
+      },
     ]
   },
   postcss: function(){
@@ -45,5 +49,6 @@ module.exports = {
     filename: "[name].js",
     library: "[name]",
     libraryTarget: "umd"
-  }
+  },
+  target: 'node'
 };

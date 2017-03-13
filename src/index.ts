@@ -1,4 +1,4 @@
 module.exports = {
-  // service: '../mailchimpService',
+  service: require('./service'),
   controller: require('./controller')
 };
