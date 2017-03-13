@@ -1,9 +1,9 @@
 /* eslint camelcase:0 */
 
 const _ = require('lodash');
-const MCService = require('./service');
+import { Opts, MCService } from './service';
 
-const handleError = (req, res) => (error) => {
+const handleError = (req: Request, res: Response) => (error) => {
   if (error.status === 400 && error.data.title === "Invalid Resource") {
     res.status(400).json(error.data);
   } else {
@@ -12,11 +12,11 @@ const handleError = (req, res) => (error) => {
   }
 };
 
-module.exports.subscribe = MAILCHIMP_API_KEY => {
+module.exports.subscribe = (opts: Opts) => {
 
-  const mcService = new MCService(MAILCHIMP_API_KEY);
+  const mcService = new MCService(opts);
 
-  return (req, res) => {
+  return (req: Request, res: Response) => {
     return mcService.subscribe(req.body)
       .then(() => res.status(201).end())
       .catch(handleError(req, res));

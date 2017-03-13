@@ -6,6 +6,9 @@ const config = require('./testConfig');
 app = express();
 app.use(bodyParser.json());
 
-app.post('/subscribe', components.controller.subscribe(config.MAILCHIMP_API_KEY));
+app.post('/subscribe', components.controller.subscribe({
+    MAILCHIMP_API_KEY: config.MAILCHIMP_API_KEY,
+    listId: 'e5770b11b0'
+}));
 
 app.listen('3507', () => console.log('server listening on localhost:3507'));
