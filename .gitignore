@@ -1,6 +1,4 @@
 node_modules/
-bower_components/
-.sass-cache/
 *.cache
 .idea/
 .temp/
@@ -9,9 +7,4 @@ bower_components/
 /typings/
 *.log
 dist/
-ww-login-modal.html
-ww-mobile-nav.html
-ww-footer.html
-ww-header.html
-ww-cookie-acceptance.html
-styles.css
+testConfig.json
