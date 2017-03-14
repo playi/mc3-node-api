@@ -7,7 +7,7 @@ const handleError = (req: Request, res: Response) => (error) => {
   if (error.status === 400 && error.data.title === "Invalid Resource") {
     res.status(400).json(error.data);
   } else {
-    console.error("Got unexpected error from mailchimp subscribe request. Error was %o, and original config: %o", error, error.config);
+    console.error(`Got unexpected error from mailchimp subscribe request. Error was ${ error }, and original config ${ error.config }`);
     res.status(500).end();
   }
 };

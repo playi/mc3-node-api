@@ -45,10 +45,7 @@ module.exports = {
   },
   output: {
     path: "./dist",
-    publicPath: "",
-    filename: "[name].js",
-    library: "[name]",
-    libraryTarget: "umd"
+    filename: "index.js"
   },
   target: 'node'
 };

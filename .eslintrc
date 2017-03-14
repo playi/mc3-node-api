@@ -1,7 +1,6 @@
 {
   "env": {
     "node": true,
-    "browser": true,
     "es6": true
   },
   "rules": {
@@ -14,10 +13,6 @@
     "no-underscore-dangle": 0
   },
   "globals": {
-    "angular": true,
-    "jQuery": true,
-    "$": true,
-    "google": true
   }
 }
 // -*- mode: json  -*-
